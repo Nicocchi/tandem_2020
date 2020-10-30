@@ -9,6 +9,7 @@ function ScoreBox(props) {
             <p>Correct: {props.correct}</p>
             <p>Incorrect: {props.incorrect}</p>
             <p>Score: {props.score}</p>
+            <button onClick={props.playAgain}>Play Again?</button>
         </div>
     )
 }

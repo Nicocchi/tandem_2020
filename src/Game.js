@@ -26,7 +26,6 @@ function Game(props) {
         let endA = endAmount;
         let currentQuestionA = currentQuestion;
 
-        console.log("CQ", currentQuestion, endA);
         if (currentQuestion === endA - 1) {
             return props.setFinished();
         }
@@ -36,7 +35,9 @@ function Game(props) {
         }
     }
 
-    console.log(endAmount)
+    const playAgain = () => {
+        props.history.push("/")
+    }
 
     if (!props.isPlaying) {
         props.history.push("/")
@@ -51,7 +52,7 @@ function Game(props) {
                 )) : null
             }
             {
-                props.isFinished ? <ScoreBox /> : null
+                props.isFinished ? <ScoreBox playAgain={playAgain} /> : null
             }
         </div>
     )
