@@ -1,3 +1,4 @@
 import QuestionBox from "./QuestionBox";
+import ScoreBox from "./ScoreBox";
 
-export {QuestionBox}
+export {QuestionBox, ScoreBox}
