@@ -15,7 +15,9 @@ function ScoreBox(props) {
 }
 
 ScoreBox.propTypes = {
-
+    correct: PropTypes.number,
+    incorrect: PropTypes.number,
+    score: PropTypes.number,
 }
 
 const mapStateToProps = (state) => {

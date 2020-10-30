@@ -1,4 +1,12 @@
-import { START_GAME, GET_QUESTIONS, INCREASE_SCORE, INCREASE_CORRECT, INCREASE_INCORRECT, SET_FINISHED } from "../actions";
+import {
+    START_GAME,
+    GET_QUESTIONS,
+    INCREASE_SCORE,
+    INCREASE_CORRECT,
+    INCREASE_INCORRECT,
+    SET_FINISHED,
+    END_GAME,
+} from "../actions";
 
 const initialState = {
     questions: [],
@@ -12,11 +20,11 @@ const initialState = {
 export const gameReducer = (state = initialState, action) => {
     switch (action.type) {
         case START_GAME:
-            const { isPlaying } = action.payload;
-            return { ...state, isPlaying };
+            return { ...state, isPlaying: action.payload.isPlaying };
+        case END_GAME:
+            return { ...state, isPlaying: action.payload.isPlaying };
         case GET_QUESTIONS:
-            const { questions } = action.payload;
-            return { ...state, questions };
+            return { ...state, questions: action.payload.questions };
         case INCREASE_SCORE:
             let scoreValue = state.score;
             scoreValue += 100;
@@ -31,7 +39,7 @@ export const gameReducer = (state = initialState, action) => {
             return { ...state, incorrect: incorrectValue };
         case SET_FINISHED:
             const { isFinished } = action.payload;
-            return { ...state, isFinished: isFinished}
+            return { ...state, isFinished: isFinished };
         default:
             return { ...state };
     }

@@ -20,7 +20,7 @@ function Game(props) {
         return () => {
             
         }
-    }, [])
+    }, [questions])
 
     const nextQuestion = () => {
         let endA = endAmount;

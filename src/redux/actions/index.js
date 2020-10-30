@@ -1,11 +1,13 @@
 import {
     START_GAME,
+    END_GAME,
     GET_QUESTIONS,
     INCREASE_SCORE,
     INCREASE_CORRECT,
     INCREASE_INCORRECT,
     SET_FINISHED,
     startGame,
+    endGame,
     getQuestions,
     increaseScore,
     increaseCorrect,
@@ -15,12 +17,14 @@ import {
 
 export {
     START_GAME,
+    END_GAME,
     GET_QUESTIONS,
     INCREASE_SCORE,
     INCREASE_CORRECT,
     INCREASE_INCORRECT,
     SET_FINISHED,
     startGame,
+    endGame,
     getQuestions,
     increaseScore,
     increaseCorrect,

@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { increaseScore, increaseCorrect, increaseIncorrect } from "../../redux/actions";
+import shortid from "shortid";
 
 function QuestionBox(props) {
     const [isCorrect, setIsCorrect] = useState(false);
@@ -25,7 +26,7 @@ function QuestionBox(props) {
         <div>
             <p>{props.question.question}</p>
             {answers.map((qst, index) => (
-                <button onClick={() => select(qst)}>{qst}</button>
+                <button key={shortid.generate()} onClick={() => select(qst)}>{qst}</button>
             ))}
             {isFinished ? <button onClick={props.nextQuestion}>Next</button> : null}
             {isFinished && isCorrect ? (

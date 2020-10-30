@@ -1,6 +1,7 @@
 import { shuffle } from "../../Utils";
 
 export const START_GAME = "START_GAME";
+export const END_GAME = "END_GAME";
 export const GET_QUESTIONS = "GET_QUESTIONS";
 export const INCREASE_SCORE = "INCREASE_SCORE";
 export const INCREASE_CORRECT = "INCREASE_CORRECT";
@@ -19,6 +20,12 @@ export const getQuestions = () => {
 export const startGame = () => {
     return (dispatch) => {
         dispatch({ type: START_GAME, payload: { isPlaying: true } });
+    };
+};
+
+export const endGame = () => {
+    return (dispatch) => {
+        dispatch({ type: END_GAME, payload: { isPlaying: false } });
     };
 };
 
