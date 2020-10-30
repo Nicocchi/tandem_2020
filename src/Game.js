@@ -36,11 +36,11 @@ function Game(props) {
     }
 
     const playAgain = () => {
-        props.history.push("/")
+        props.history.push("/");
     }
 
     if (!props.isPlaying) {
-        props.history.push("/")
+        props.history.push("/");
     }
 
     return (
