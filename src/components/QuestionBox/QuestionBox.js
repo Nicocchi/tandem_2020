@@ -24,16 +24,32 @@ function QuestionBox(props) {
     };
     return (
         <div>
-            <p>{props.question.question}</p>
-            {answers.map((qst, index) => (
-                <button key={shortid.generate()} onClick={() => select(qst)}>{qst}</button>
-            ))}
-            {isFinished ? <button onClick={props.nextQuestion}>Next</button> : null}
-            {isFinished && isCorrect ? (
-                <p>Correct!</p>
-            ) : isFinished && !isCorrect ? (
-                <p>Incorrect! Correct answer is {props.question.correct}</p>
+            <p className="question">{props.question.question}</p>
+            {
+                <div className="answers-box">
+                    {answers.map((qst, index) => (
+                        <button className="answer-btn" key={shortid.generate()} onClick={() => select(qst)}>
+                            {qst}
+                        </button>
+                    ))}
+                </div>
+            }
+
+            <div className="answer-wrapper">
+            {isFinished ? (
+                <button className="answer-btn next-btn" onClick={props.nextQuestion}>
+                    Next
+                </button>
             ) : null}
+            {isFinished && isCorrect ? (
+                <p className="correct-text">Correct!</p>
+            ) : isFinished && !isCorrect ? (
+                <span className="answer-text">
+                    <p className="incorrect-text">Incorrect! The correct answer is:</p>
+                    <p className="correct-text">{props.question.correct}</p>
+                </span>
+            ) : null}
+            </div>
         </div>
     );
 }

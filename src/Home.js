@@ -11,8 +11,8 @@ function Home(props) {
     });
     return (
         <header className="App-header">
-            <h1>Tandem Trivia</h1>
-            <NavLink to="/play" onClick={props.startGame}>
+            <img alt="Tandem Trivia" src="images/logo.png" />
+            <NavLink to="/play" onClick={props.startGame} className="play-btn">
                 Play
             </NavLink>
         </header>

@@ -1,0 +1,111 @@
+.App {
+  height: 100%;
+  text-align: center;
+}
+
+.App-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+  height: calc(100% - 6vh);
+}
+
+.play-btn {
+  margin-top: 40px;
+  font-size: 2em;
+  color: #551a8b;
+
+  &:hover {
+    color: #cc00f8;
+  }
+}
+
+// Header
+.game-header {
+  height: 50px;
+  display: flex;
+  justify-content: flex-end;
+  padding-right: 10px;
+
+  .answer-btn {
+    height: 30px;
+    width: 80px;
+    font-size: 1em;
+  }
+}
+
+// Game
+.game-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: calc(100% - 6vh);
+}
+
+// QuestionBox
+.question {
+  font-size: 1.7em;
+  color: #fff;
+}
+
+.answers-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.answer-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.answer-btn {
+  border: none;
+  width: 300px;
+  height: 50px;
+  border-radius: 20px;
+  margin-top: 10px;
+  background-color: #2678e6;
+  color: #fff;
+  font-family: 'Luckiest Guy', cursive;
+  font-size: 1.4em;
+  padding-top: 6px;
+
+  &:hover {
+    background-color: #4031d4;
+  }
+}
+
+.next-btn {
+  background-color: #12d239;
+  margin-top: 40px;
+
+  &:hover {
+    background-color: #0faa2e;
+  }
+}
+
+.answer-text {
+  display: flex;
+  justify-content: space-evenly;
+
+  p {
+    font-size: 1.4em;
+    padding: 5px;
+  }
+}
+
+.incorrect-text {
+  color: red;
+}
+
+.correct-text {
+  color: #12d239;
+}
+
+// Score

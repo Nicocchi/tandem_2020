@@ -44,8 +44,7 @@ function Game(props) {
     }
 
     return (
-        <div>
-            <h1>Game</h1>
+        <div className="game-wrapper">
             {
                 !props.isFinished ? questions.map((question, index) => (
                     index === currentQuestion ? <QuestionBox key={shortid.generate()} question={question} nextQuestion={nextQuestion} /> : null
