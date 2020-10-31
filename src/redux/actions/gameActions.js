@@ -18,14 +18,15 @@ export const getQuestions = () => {
 };
 
 export const startGame = () => {
+    const questions = shuffle(data);
     return (dispatch) => {
-        dispatch({ type: START_GAME, payload: { isPlaying: true } });
+        dispatch({ type: START_GAME, payload: { questions: questions.slice(0, 10) } });
     };
 };
 
 export const endGame = () => {
     return (dispatch) => {
-        dispatch({ type: END_GAME, payload: { isPlaying: false } });
+        dispatch({ type: END_GAME });
     };
 };
 

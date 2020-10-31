@@ -12,7 +12,7 @@ function Home(props) {
     return (
         <header className="App-header">
             <img alt="Tandem Trivia" src="images/logo.png" />
-            <NavLink to="/play" onClick={props.startGame} className="play-btn">
+            <NavLink to="/play" onClick={props.startGame} className="play-btn animated swing">
                 Play
             </NavLink>
         </header>

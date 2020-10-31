@@ -20,9 +20,9 @@ const initialState = {
 export const gameReducer = (state = initialState, action) => {
     switch (action.type) {
         case START_GAME:
-            return { ...state, isPlaying: action.payload.isPlaying };
+            return { ...state, isPlaying: true, questions: action.payload.questions };
         case END_GAME:
-            return { ...state, isPlaying: action.payload.isPlaying };
+            return { ...state, isPlaying: false, isFinished: false, correct: 0, incorrect: 0, score: 0, };
         case GET_QUESTIONS:
             return { ...state, questions: action.payload.questions };
         case INCREASE_SCORE:

@@ -6,14 +6,23 @@ import { endGame } from "../../redux/actions";
 function Header(props) {
     return (
         <div className="game-header">
-            <button className="answer-btn" onClick={props.endGame}>Quit</button>
+            {
+                props.isPlaying ? <button className="answer-btn" onClick={props.endGame}>Quit</button> : null
+            }
         </div>
     )
 }
 
 Header.propTypes = {
     endGame: PropTypes.func,
+    isPlaying: PropTypes.bool,
 }
 
-export default connect(null, { endGame })(Header);
+const mapStateToProps = (state) => {
+    return {
+        isPlaying: state.gameReducer.isPlaying,
+    };
+};
+
+export default connect(mapStateToProps, { endGame })(Header);
 

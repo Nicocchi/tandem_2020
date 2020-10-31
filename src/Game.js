@@ -1,10 +1,10 @@
-import React, { useEffect, useState } from 'react';
-import PropTypes from 'prop-types';
+import React, { useEffect, useState } from "react";
+import PropTypes from "prop-types";
 import { connect } from "react-redux";
-import QuestionBox from './components/QuestionBox/QuestionBox';
+import QuestionBox from "./components/QuestionBox/QuestionBox";
 import shortid from "shortid";
-import { setFinished } from "./redux/actions";
-import ScoreBox from './components/ScoreBox/ScoreBox';
+import { setFinished, endGame } from "./redux/actions";
+import ScoreBox from "./components/ScoreBox/ScoreBox";
 
 function Game(props) {
     const [currentQuestion, setCurrentQuestion] = useState(0);
@@ -17,10 +17,8 @@ function Game(props) {
             setEndAmount(questions.length);
         }
 
-        return () => {
-            
-        }
-    }, [questions])
+        return () => {};
+    }, [questions]);
 
     const nextQuestion = () => {
         let endA = endAmount;
@@ -31,13 +29,13 @@ function Game(props) {
         }
 
         if (currentQuestion !== endA - 1) {
-            setCurrentQuestion(currentQuestionA += 1);
+            setCurrentQuestion((currentQuestionA += 1));
         }
-    }
+    };
 
     const playAgain = () => {
-        props.history.push("/");
-    }
+        props.endGame();
+    };
 
     if (!props.isPlaying) {
         props.history.push("/");
@@ -45,31 +43,31 @@ function Game(props) {
 
     return (
         <div className="game-wrapper">
-            {
-                !props.isFinished ? questions.map((question, index) => (
-                    index === currentQuestion ? <QuestionBox key={shortid.generate()} question={question} nextQuestion={nextQuestion} /> : null
-                )) : null
-            }
-            {
-                props.isFinished ? <ScoreBox playAgain={playAgain} /> : null
-            }
+            {!props.isFinished
+                ? questions.map((question, index) =>
+                      index === currentQuestion ? (
+                          <QuestionBox key={shortid.generate()} question={question} nextQuestion={nextQuestion} />
+                      ) : null
+                  )
+                : null}
+            {props.isFinished ? <ScoreBox playAgain={playAgain} /> : null}
         </div>
-    )
+    );
 }
 
 Game.propTypes = {
     questions: PropTypes.array,
     isFinished: PropTypes.bool,
     isPlaying: PropTypes.bool,
-}
+    endGame: PropTypes.func,
+};
 
 const mapStateToProps = (state) => {
     return {
-      questions: state.gameReducer.questions,
-      isFinished: state.gameReducer.isFinished,
-      isPlaying: state.gameReducer.isPlaying,
-    }
-  }
-  
-  export default connect(mapStateToProps, { setFinished })(Game);
+        questions: state.gameReducer.questions,
+        isFinished: state.gameReducer.isFinished,
+        isPlaying: state.gameReducer.isPlaying,
+    };
+};
 
+export default connect(mapStateToProps, { setFinished, endGame })(Game);
