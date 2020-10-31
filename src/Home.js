@@ -11,8 +11,11 @@ function Home(props) {
     });
     return (
         <header className="App-header">
-            <img alt="Tandem Trivia" src="images/logo.png" />
-            <NavLink to="/play" onClick={props.startGame} className="play-btn animated swing">
+            {/* <img alt="Tandem Trivia" src="images/logo.png" /> */}
+            <p className="text-shadow-pop-left title1">Tandem</p>
+            <p className="text-shadow-pop-left title2">Trivia</p>
+            {/* <p className="css-3d-text2 animated bounce-in-down">Trivia</p> */}
+            <NavLink to="/play" onClick={props.startGame} className="play-btn animated-infinite swing">
                 Play
             </NavLink>
         </header>
