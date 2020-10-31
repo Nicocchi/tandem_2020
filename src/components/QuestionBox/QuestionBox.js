@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { increaseScore, increaseCorrect, increaseIncorrect } from "../../redux/actions";
 import shortid from "shortid";
+import { ranInterval } from "../../Utils";
 
 function QuestionBox(props) {
     const [isCorrect, setIsCorrect] = useState(false);
@@ -28,7 +29,7 @@ function QuestionBox(props) {
             {
                 <div className="answers-box">
                     {answers.map((qst, index) => (
-                        <button className="answer-btn" key={shortid.generate()} onClick={() => select(qst)}>
+                        <button style={{animationDuration: index === 0 ? `0.2s` :`${index / 2}s`, animationFillMode: "both"}} className="answer-btn bounceInRight" key={shortid.generate()} onClick={() => select(qst)}>
                             {qst}
                         </button>
                     ))}
