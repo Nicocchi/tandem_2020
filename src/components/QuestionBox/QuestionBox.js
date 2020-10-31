@@ -3,12 +3,13 @@ import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { increaseScore, increaseCorrect, increaseIncorrect } from "../../redux/actions";
 import shortid from "shortid";
+import { shuffle } from "../../Utils";
 
 function QuestionBox(props) {
     const [isCorrect, setIsCorrect] = useState(false);
     const [isFinished, setIsFinished] = useState(false);
 
-    const answers = [...props.question.incorrect, props.question.correct];
+    const answers = shuffle([...props.question.incorrect, props.question.correct]);
 
     const select = (index) => {
         if (isFinished) return;
@@ -24,9 +25,10 @@ function QuestionBox(props) {
     };
     return (
         <div>
+            <p className="question animated fade-in">{props.current + 1} / {props.endAmount}</p>
             <p className="question animated fade-in">{props.question.question}</p>
             {
-                <div className="answers-box">
+                <div style={{display: isFinished ? 'none' : 'flex'}} className="answers-box">
                     {answers.map((qst, index) => (
                         <button style={{animationDuration: index === 0 ? `0.2s` :`${index / 2}s`, animationFillMode: "both"}} className={`answer-btn ${!isFinished ? "bounce-in-right" : null}`} key={shortid.generate()} onClick={() => select(qst)}>
                             {qst}

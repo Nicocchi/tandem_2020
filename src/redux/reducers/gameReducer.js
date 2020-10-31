@@ -39,6 +39,12 @@ export const gameReducer = (state = initialState, action) => {
             return { ...state, incorrect: incorrectValue };
         case SET_FINISHED:
             const { isFinished } = action.payload;
+            const localScore = localStorage.getItem('score');
+            if (localScore !== null) {
+                if (state.score > localScore) localStorage.setItem('score', state.score);
+            } else {
+                localStorage.setItem('score', state.score);
+            }
             return { ...state, isFinished: isFinished };
         default:
             return { ...state };

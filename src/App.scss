@@ -24,6 +24,7 @@
   font-size: 3em;
   // color: #cc00f8;
   color: #33c7f5;
+  cursor: pointer;
 
   &:hover {
     // color: #551a8b;
@@ -83,6 +84,7 @@
   font-family: 'Luckiest Guy', cursive;
   font-size: 1.4em;
   padding-top: 6px;
+  cursor: pointer;
 
   &:hover {
     background-color: #4031d4;
@@ -92,6 +94,7 @@
 .next-btn {
   background-color: #12d239;
   margin-top: 40px;
+  cursor: pointer;
 
   &:hover {
     background-color: #0faa2e;
@@ -117,6 +120,29 @@
 }
 
 // Score
+.score-box {
+  p, h1 {
+    color: #fff;
+  }
+
+  h1 {
+    font-size: 4em;
+  }
+
+  p {
+    font-size: 1.4em;
+    padding: 0 5px 0 5px;
+  }
+
+  span {
+    display: flex;
+    justify-content: center;
+  }
+}
+
+.score-num {
+  color: #0faa2e !important;
+}
 
 // Animations
 .animated { 

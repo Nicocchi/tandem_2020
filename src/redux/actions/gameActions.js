@@ -19,6 +19,7 @@ export const getQuestions = () => {
 
 export const startGame = () => {
     const questions = shuffle(data);
+    console.log(questions)
     return (dispatch) => {
         dispatch({ type: START_GAME, payload: { questions: questions.slice(0, 10) } });
     };

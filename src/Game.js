@@ -46,7 +46,7 @@ function Game(props) {
             {!props.isFinished
                 ? questions.map((question, index) =>
                       index === currentQuestion ? (
-                          <QuestionBox key={shortid.generate()} question={question} nextQuestion={nextQuestion} />
+                          <QuestionBox key={shortid.generate()} current={currentQuestion} endAmount={endAmount} question={question} nextQuestion={nextQuestion} />
                       ) : null
                   )
                 : null}
