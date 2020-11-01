@@ -2,8 +2,7 @@ import React from "react";
 import { Route } from "react-router";
 import shortid from "shortid";
 
-import Home from "./Home";
-import Game from "./Game";
+import { Home, Game } from "./pages";
 
 const routes = [
     <Route key={shortid.generate()} exact path="/" component={Home} />,

@@ -1,10 +1,9 @@
 import React, { useEffect, useState } from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
-import QuestionBox from "./components/QuestionBox/QuestionBox";
 import shortid from "shortid";
-import { setFinished, endGame } from "./redux/actions";
-import ScoreBox from "./components/ScoreBox/ScoreBox";
+import { QuestionBox, ScoreBox } from "./../../components";
+import { setFinished, endGame } from "./../../redux/actions";
 
 function Game(props) {
     const [currentQuestion, setCurrentQuestion] = useState(0);
@@ -46,7 +45,13 @@ function Game(props) {
             {!props.isFinished
                 ? questions.map((question, index) =>
                       index === currentQuestion ? (
-                          <QuestionBox key={shortid.generate()} current={currentQuestion} endAmount={endAmount} question={question} nextQuestion={nextQuestion} />
+                          <QuestionBox
+                              key={shortid.generate()}
+                              current={currentQuestion}
+                              endAmount={endAmount}
+                              question={question}
+                              nextQuestion={nextQuestion}
+                          />
                       ) : null
                   )
                 : null}

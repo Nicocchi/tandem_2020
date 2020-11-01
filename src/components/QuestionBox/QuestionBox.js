@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
-import { increaseScore, increaseCorrect, increaseIncorrect } from "../../redux/actions";
 import shortid from "shortid";
-import { shuffle } from "../../Utils";
+import { increaseScore, increaseCorrect, increaseIncorrect } from "./../../redux/actions";
+import { shuffle } from "./../../Utils";
 
 function QuestionBox(props) {
     const [isCorrect, setIsCorrect] = useState(false);
@@ -14,10 +14,8 @@ function QuestionBox(props) {
         if (props.question?.correct && props.question?.incorrect) {
             setAnswers(shuffle([...props.question.incorrect, props.question.correct]));
         }
-        return () => {
-            
-        }
-    }, [props.question])
+        return () => {};
+    }, [props.question]);
 
     const select = (index) => {
         if (isFinished) return;
