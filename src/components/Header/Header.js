@@ -7,7 +7,7 @@ function Header(props) {
     return (
         <div className="game-header">
             {
-                props.isPlaying ? <button className="answer-btn" onClick={props.endGame}>Quit</button> : null
+                props.isPlaying ? <button data-testid="header-btn" className="answer-btn" onClick={props.endGame}>Quit</button> : null
             }
         </div>
     )

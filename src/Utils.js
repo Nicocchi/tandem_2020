@@ -1,5 +1,9 @@
+import sinon from "sinon";
+
 export const shuffle = (arr) => {
-    let m = arr.length, t, i;
+    let m = arr.length,
+        t,
+        i;
 
     // While there remain elements to shuffle
     while (m) {
@@ -13,8 +17,25 @@ export const shuffle = (arr) => {
     }
 
     return arr;
-}
+};
 
 export const ranInterval = (min, max) => {
     return Math.floor(Math.random() * (max - min + 1) + min);
-}
+};
+
+export const stubConsoleError = () => {
+    beforeEach(() => {
+        sinon.stub(console, "error");
+    });
+
+    afterEach(() => {
+        console.error.restore();
+    });
+};
+
+export const expectMissingProp = (prop, component) => {
+    sinon.assert.calledWithMatch(
+        console.error,
+        new RegExp(`The prop \`${prop}\` is marked as required in \`${component}\`, but its value is \`undefined\`.`)
+    );
+};
