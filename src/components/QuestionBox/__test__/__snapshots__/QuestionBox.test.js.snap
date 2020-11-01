@@ -1,0 +1,29 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`QuestionBox matches snapshop 1`] = `
+<div>
+  <p
+    className="question animated fade-in"
+  >
+    NaN
+     / 
+  </p>
+  <p
+    className="question animated fade-in"
+    data-testid="question"
+  >
+    What is the national animal of Scotland?
+  </p>
+  <div
+    className="answers-box"
+    style={
+      Object {
+        "display": "flex",
+      }
+    }
+  />
+  <div
+    className="answer-wrapper"
+  />
+</div>
+`;
