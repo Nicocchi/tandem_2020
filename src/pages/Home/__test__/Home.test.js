@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import Game from "./../Game";
+import Home from "./../Home";
 import store from "../../../redux/store";
 import { Provider } from "react-redux";
 import { Router } from "react-router-dom";
@@ -11,7 +11,7 @@ import "@testing-library/jest-dom/extend-expect";
 
 import renderer from "react-test-renderer";
 
-describe("Game Page", () => {
+describe("Home Page", () => {
     const history = createMemoryHistory({ initialEntries: ["/"] });
 
     afterEach(() => {
@@ -24,7 +24,7 @@ describe("Game Page", () => {
         ReactDOM.render(
             <Provider store={store}>
                 <Router history={history}>
-                    <Game history={history} />
+                    <Home history={history} />
                 </Router>
             </Provider>,
             div
@@ -36,7 +36,7 @@ describe("Game Page", () => {
             .create(
                 <Provider store={store}>
                     <Router history={history}>
-                        <Game history={history} />
+                        <Home history={history} />
                     </Router>
                 </Provider>
             )
