@@ -3,6 +3,12 @@ import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { endGame } from "./../../redux/actions";
 
+/**
+ * Main header for the game. Holds only the `Quit` button.
+ *
+ * @param {*} props
+ * @returns
+ */
 function Header(props) {
     return (
         <div className="game-header">

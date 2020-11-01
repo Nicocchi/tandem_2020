@@ -2,6 +2,14 @@ import React from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 
+/**
+ * ScoreBox component.
+ * Renders the scores to the user.
+ * Holds `Correct`, `Incorrect`, `Score` and `High Score`.
+ *
+ * @param {*} props
+ * @returns
+ */
 function ScoreBox(props) {
     const highScore = localStorage.getItem("score");
     return (

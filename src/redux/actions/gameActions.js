@@ -10,6 +10,12 @@ export const SET_FINISHED = "SET_FINISHED";
 
 const data = require("../../Apprentice_TandemFor400_Data.json");
 
+/**
+ * Get the questions from the data object and shuffle it and
+ * send it to the reducer.
+ *
+ * @returns dispatch
+ */
 export const getQuestions = () => {
     const questions = shuffle(data);
     return (dispatch) => {
@@ -17,6 +23,11 @@ export const getQuestions = () => {
     };
 };
 
+/**
+ * Set the `isPlaying` bool to true.
+ *
+ * * @returns dispatch
+ */
 export const startGame = () => {
     const questions = shuffle(data);
     console.log(questions)
@@ -25,30 +36,55 @@ export const startGame = () => {
     };
 };
 
+/**
+ * Set the `isPlaying` bool to false and reset the scores.
+ *
+ * * @returns dispatch
+ */
 export const endGame = () => {
     return (dispatch) => {
         dispatch({ type: END_GAME });
     };
 };
 
+/**
+ * Increases the score
+ *
+ * * @returns dispatch
+ */
 export const increaseScore = () => {
     return (dispatch) => {
         dispatch({ type: INCREASE_SCORE });
     };
 };
 
+/**
+ * Increases the correct question amount
+ *
+ * * @returns dispatch
+ */
 export const increaseCorrect = () => {
     return (dispatch) => {
         dispatch({ type: INCREASE_CORRECT });
     };
 };
 
+/**
+ * Increases the incorrect question amount
+ *
+ * * @returns dispatch
+ */
 export const increaseIncorrect = () => {
     return (dispatch) => {
         dispatch({ type: INCREASE_INCORRECT });
     };
 };
 
+/**
+ * Finish the game
+ *
+ * * @returns dispatch
+ */
 export const setFinished = () => {
     return (dispatch) => {
         dispatch({ type: SET_FINISHED, payload: { isFinished: true }})

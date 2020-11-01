@@ -5,6 +5,13 @@ import shortid from "shortid";
 import { increaseScore, increaseCorrect, increaseIncorrect } from "./../../redux/actions";
 import { shuffle } from "./../../Utils";
 
+/**
+ * QuestionBox component.
+ * Renders the question and answers to the player.
+ *
+ * @param {*} props
+ * @returns
+ */
 function QuestionBox(props) {
     const [isCorrect, setIsCorrect] = useState(false);
     const [isFinished, setIsFinished] = useState(false);

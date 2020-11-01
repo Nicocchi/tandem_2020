@@ -5,6 +5,13 @@ import shortid from "shortid";
 import { QuestionBox, ScoreBox } from "./../../components";
 import { setFinished, endGame } from "./../../redux/actions";
 
+/**
+ * Renders the main game page "/play".
+ * Holds the game logic for navigating the game.
+ *
+ * @param {*} props
+ * @returns
+ */
 function Game(props) {
     const [currentQuestion, setCurrentQuestion] = useState(0);
     const [endAmount, setEndAmount] = useState(0);
@@ -19,6 +26,12 @@ function Game(props) {
         return () => {};
     }, [questions]);
 
+    /**
+     * Displays the next question.
+     * Sets the currentQuestion amount to the next amount
+     * if the next question exists.
+     *
+     */
     const nextQuestion = () => {
         let endA = endAmount;
         let currentQuestionA = currentQuestion;
@@ -32,10 +45,15 @@ function Game(props) {
         }
     };
 
+    /**
+     * Allow the player to play the game again.
+     *
+     */
     const playAgain = () => {
         props.endGame();
     };
 
+    // If we are not playing the game, return to home page.
     if (!props.isPlaying) {
         props.history.push("/");
     }

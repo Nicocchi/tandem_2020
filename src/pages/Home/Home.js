@@ -4,6 +4,12 @@ import { NavLink } from "react-router-dom";
 import { connect } from "react-redux";
 import { startGame, endGame } from "./../../redux/actions";
 
+/**
+ * Home page
+ *
+ * @param {*} props
+ * @returns
+ */
 function Home(props) {
     useEffect(() => {
         props.endGame();
