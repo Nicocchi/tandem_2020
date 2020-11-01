@@ -1,0 +1,33 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`App matches snapshop 1`] = `
+<div
+  className="App"
+>
+  <div
+    className="game-header"
+  />
+  <header
+    className="App-header"
+  >
+    <p
+      className="text-shadow-pop-left title1"
+    >
+      Tandem
+    </p>
+    <p
+      className="text-shadow-pop-left title2"
+    >
+      Trivia
+    </p>
+    <a
+      aria-current={null}
+      className="play-btn animated-infinite swing"
+      href="/play"
+      onClick={[Function]}
+    >
+      Play
+    </a>
+  </header>
+</div>
+`;
