@@ -44,6 +44,7 @@
   },
   "devDependencies": {
     "@testing-library/react": "^11.1.0",
+    "history": "^5.0.0",
     "jest-dom": "^4.0.0",
     "react-test-renderer": "^17.0.1",
     "sinon": "^9.2.1"
