@@ -14,7 +14,7 @@ const composeEnhancers =
         : compose;
 
 const devEnhancer = composeEnhancers(applyMiddleware(thunk, logger));
-const enhancer = composeEnhancers(applyMiddleware());
+const enhancer = composeEnhancers(applyMiddleware(thunk));
 
 // Create redux store
 if (process.env.REACT_APP_NODE_ENV !== "production") {
