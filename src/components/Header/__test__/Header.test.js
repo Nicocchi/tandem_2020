@@ -4,11 +4,10 @@ import Header from "./../Header";
 import store from "./../../../redux/store";
 import { Provider } from "react-redux";
 
-import { render, cleanup } from "@testing-library/react";
+import { cleanup } from "@testing-library/react";
 import "@testing-library/jest-dom/extend-expect";
 
 import renderer from "react-test-renderer";
-import { stubConsoleError } from "./../../../Utils";
 
 describe("Header", () => {
     afterEach(() => {

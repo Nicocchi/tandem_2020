@@ -7,10 +7,10 @@ function ScoreBox(props) {
     return (
         <div className="score-box">
             <h1>{props.incorrect <= 2 ? "Congrats!" : "Game Over"}</h1>
-            <span><p>Correct:</p><p className="score-num">{props.correct}</p></span>
-            <span><p>Incorrect:</p><p className="score-num">{props.incorrect}</p></span>
-            <span><p>Score:</p><p className="score-num">{props.score}</p></span>
-            <span><p>High Score:</p><p className="score-num">{highScore ? highScore : props.score}</p></span>
+            <span><p>Correct:</p><p className="score-num" data-testid="scorebox-correct-val">{props.correct}</p></span>
+            <span><p>Incorrect:</p><p className="score-num" data-testid="scorebox-incorrect-val">{props.incorrect}</p></span>
+            <span><p>Score:</p><p className="score-num" data-testid="scorebox-score-val">{props.score}</p></span>
+            <span><p>High Score:</p><p className="score-num" data-testid="scorebox-highscore-val">{highScore ? highScore : props.score}</p></span>
             <button className="answer-btn next-btn animated flip-in-y" onClick={props.playAgain}>Play Again?</button>
         </div>
     )

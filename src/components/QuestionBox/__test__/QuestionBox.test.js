@@ -70,7 +70,6 @@ describe("QuestionBox", () => {
 
     describe("question", () => {
         it("renders the text correctly", () => {
-            const div = document.createElement("div");
             const { getByTestId } = render(
                 <Provider store={store}>
                     <QuestionBox question={question} nextQuestion={mockFunction} />

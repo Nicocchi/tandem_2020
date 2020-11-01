@@ -1,0 +1,60 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ScoreBox matches snapshop 1`] = `
+<div
+  className="score-box"
+>
+  <h1>
+    Congrats!
+  </h1>
+  <span>
+    <p>
+      Correct:
+    </p>
+    <p
+      className="score-num"
+      data-testid="scorebox-correct-val"
+    >
+      0
+    </p>
+  </span>
+  <span>
+    <p>
+      Incorrect:
+    </p>
+    <p
+      className="score-num"
+      data-testid="scorebox-incorrect-val"
+    >
+      0
+    </p>
+  </span>
+  <span>
+    <p>
+      Score:
+    </p>
+    <p
+      className="score-num"
+      data-testid="scorebox-score-val"
+    >
+      0
+    </p>
+  </span>
+  <span>
+    <p>
+      High Score:
+    </p>
+    <p
+      className="score-num"
+      data-testid="scorebox-highscore-val"
+    >
+      0
+    </p>
+  </span>
+  <button
+    className="answer-btn next-btn animated flip-in-y"
+  >
+    Play Again?
+  </button>
+</div>
+`;
